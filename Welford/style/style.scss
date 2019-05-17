@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('RobotoCondensed-Regular.ttf');
+}
+
+$primaryFont: 'Roboto';
+$primaryFontColor: #323232;
+$secondaryFontColor: #adadad;
+$tertiaryColor: #9ab4bc;
+
+@mixin imgCoverCenter {
+  object-fit: cover;
+  object-position: 100% 0;
+  width: 18.75rem;
+  height: 21.0625rem;
+}
+
+header {
+  text-align: center;
+  color: $primaryFontColor;
+  font-family: $primaryFont;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:200;
+  background-color:#fff;
+}
+
+#navbar {
+  overflow: hidden;
+  padding: 1rem;
+  border-bottom: 0.1rem solid #d9d9d9;
+
+  a {
+    color: $primaryFontColor;
+    padding: 1rem;
+    text-decoration: none;
+  }
+}
+
+.body {
+  margin-top:7.5rem;
+}
+
+.whitebyRangeBack {
+  background-color:#659898;
+  height:33.75rem;
+  max-height: 33.75rem;
+  position: relative;
+  text-align: center;
+}
+
+.whitebyRange {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:#fff;
+
+  span {
+    display:block;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-bottom:0.8rem;
+  }
+}
+
+.img-container {
+  position: relative;
+}
+
+.imageItems {
+  img {
+    @include imgCoverCenter();
+  }
+  .text-block {
+    position: absolute;
+    text-align: center;
+    transform: translate(25%, -120%);
+    background-color: white;
+    color: $secondaryFontColor;
+    padding:2rem;
+    outline: 1px solid #dddddd;
+    outline-offset: -0.625rem;
+    h4 {
+      text-transform: uppercase;
+    }     
+  }
+}
+
+.favoriteItemsBannerText {
+  h2 {
+    color:$primaryFontColor;
+    font-family: $primaryFont;
+    margin:5rem 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  span {
+    display:block;
+    font-size: 1rem;
+    color: $secondaryFontColor;
+    font-style: italic;
+  }
+}
+
+.favoriteItems {
+  img {
+    @include imgCoverCenter();
+  }
+  h4 {
+    text-align: center;
+    color:$primaryFontColor;
+    margin-top:1rem;
+    text-transform: uppercase;
+  }
+  p {
+    text-align: center;
+    color:$secondaryFontColor;  
+  }
+
+  .pStriked {
+    text-decoration: line-through;
+    color:$secondaryFontColor; 
+  }
+
+  span {
+    color: $tertiaryColor;
+    text-decoration: initial;
+  }
+}
+
+footer {
+  text-align: center;
+  font-family: $primaryFont;
+  z-index:200;
+  background-color:#fff;
+  margin-top:2rem;
+
+  #navbar {
+    overflow: hidden;
+    padding: 1rem;
+    border-top:0.1rem solid $secondaryFontColor;
+    border-bottom:0.1rem solid $secondaryFontColor;
+
+    a {
+      color: $secondaryFontColor;
+      padding: 1rem;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  .socialIcons {
+    margin-top:2rem;
+    font-size: 2rem;
+
+    i {
+      margin-right:3rem;  
+      color:$tertiaryColor;
+      border: 0.08rem solid $tertiaryColor;
+      padding: 0.4rem;
+      border-radius: 1000rem;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top:2rem;
+    h4 {
+      color: $secondaryFontColor;
+      margin-top:2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .whitebyRangeBack, .img-container {
+    margin-top:2rem;
+  }
+}
